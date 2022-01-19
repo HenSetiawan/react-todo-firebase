@@ -1,10 +1,10 @@
 import "../css/task.css";
-const Task = () => {
+const Task = (props) => {
   return (
     <div>
       <div className="card">
-        <h1 className="title">Belajar React</h1>
-        <p>Belajar React Dari Youtube</p>
+        <h1 className="title">{props.title}</h1>
+        <p>{props.description}</p>
         <button className="btn">Delete</button>
       </div>
     </div>
