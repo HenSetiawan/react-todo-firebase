@@ -1,0 +1,27 @@
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 10px;
+  width: 33%;
+}
+
+.title {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    transparent 50%,
+    #fbf36d 0,
+    #fbf36d
+  );
+  color: #454b4e;
+  width: 80%;
+}
+
+.btn {
+  background-color: rgb(226, 21, 21);
+  border: none;
+  color: #fff;
+  border-radius:8px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
