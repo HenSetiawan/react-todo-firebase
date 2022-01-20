@@ -1,11 +1,13 @@
 import "../css/modal.css";
-const Modal = () => {
+const Modal = (props) => {
   return (
     <div>
       <div className="modal">
         <div className="card-modal">
           <p>Are You Sure ?</p>
-          <button className="btn-cancel">Cancel</button>
+          <button className="btn-cancel" onClick={props.onCancel}>
+            Cancel
+          </button>
           <button className="btn-confirm">Confirm</button>
         </div>
       </div>
