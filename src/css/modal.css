@@ -1,0 +1,30 @@
+.modal {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding-top: 15%;
+}
+
+.card-modal {
+  margin: auto;
+  padding: 30px;
+  width: 33%;
+  border-radius: 6px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.btn-confirm {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px;
+  background-color: #fbf36d;
+  margin: 10px;
+}
+
+.btn-cancel {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px;
+}
