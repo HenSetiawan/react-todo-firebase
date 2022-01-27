@@ -1,15 +1,19 @@
-import { Route, Routes } from "react-router-dom";
-import TaskListPage from '../pages/TaskListPage';
-import TaskFormPage from "../pages/TaskFormPage";
+import { Link } from "react-router-dom";
+import "../css/navigation.css";
 
 const Navigation = () => {
   return (
     <div>
-      <div className="nav">
-        <Routes>
-          <Route path="/" element={<TaskListPage />} />
-          <Route path="/add" element={<TaskFormPage />} />
-        </Routes>
+      <div className="navbar">
+        <nav>
+          <ul>
+            <li className="active">
+              <Link to="/">All Task /</Link>
+            </li>
+            <li><Link to="/finished">Finished /</Link></li>
+            <li><Link to="/unfinished">Unfinished /</Link></li>
+          </ul>
+        </nav>
       </div>
     </div>
   );
