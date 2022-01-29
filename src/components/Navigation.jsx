@@ -11,7 +11,7 @@ const Navigation = () => {
               <Link to="/">All Task /</Link>
             </li>
             <li><Link to="/finished">Finished /</Link></li>
-            <li><Link to="/unfinished">Unfinished /</Link></li>
+            <li><Link to="/unfinished">Unfinished</Link></li>
           </ul>
         </nav>
       </div>

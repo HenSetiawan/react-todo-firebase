@@ -2,7 +2,7 @@ import "./css/app.css";
 import Navigation from "./components/Navigation";
 import { Route, Routes } from "react-router-dom";
 import TaskListPage from "./pages/TaskListPage";
-import TaskFormPage from "./pages/TaskFormPage";
+import UnfinishedTask from "./pages/UnfinishedTask";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<TaskListPage />} />
-        <Route path="/finished" element={<TaskFormPage />} />
+        <Route path="/unfinished" element={<UnfinishedTask />} />
       </Routes>
     </div>
   );
