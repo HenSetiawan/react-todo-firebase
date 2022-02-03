@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../css/navigation.css";
 
 const Navigation = () => {
@@ -7,11 +7,30 @@ const Navigation = () => {
       <div className="navbar">
         <nav>
           <ul>
-            <li className="active">
-              <Link to="/">All Task /</Link>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                All Task /
+              </NavLink>
             </li>
-            <li><Link to="/finished">Finished /</Link></li>
-            <li><Link to="/unfinished">Unfinished</Link></li>
+            <li>
+              <NavLink
+                to="/finished"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Finished /
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/unfinished"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Unfinished
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
