@@ -1,10 +1,10 @@
 import Task from "../components/Task";
 import taskListService from "../services/TaskListService";
 
-const TaskListPage = (props) => {
+const AllTaskListPage = (props) => {
   return (
     <div>
-      {taskListService.getUnfinishedTask().map((task) => {
+      {taskListService.getAllTaskList().map((task) => {
         return (
           <Task
             title={task.title}
@@ -17,4 +17,4 @@ const TaskListPage = (props) => {
   );
 };
 
-export default TaskListPage;
+export default AllTaskListPage;

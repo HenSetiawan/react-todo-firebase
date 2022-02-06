@@ -1,8 +1,17 @@
 import Task from "../components/Task";
+import taskListService from "../services/TaskListService";
 const TaskListPage = (props) => {
   return (
     <div>
-      <Task title="Belajar React" description="Belajar React dari youtube" />
+           {taskListService.getFinishedTask().map((task) => {
+        return (
+          <Task
+            title={task.title}
+            description={task.description}
+            key={task.id}
+          />
+        );
+      })}
     </div>
   );
 };
