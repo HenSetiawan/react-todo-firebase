@@ -1,5 +1,5 @@
 import "../css/task.css";
-import Modal from "./Modal";
+import Alert from "./Alert";
 import { useState } from "react";
 
 const Task = (props) => {
@@ -15,10 +15,11 @@ const Task = (props) => {
 
   return (
     <div>
-      {isModalOpen ? <Modal onCancel={cancelHandler} /> : null}
+      {isModalOpen ? <Alert onCancel={cancelHandler} /> : null}
       <div className="card">
         <h1 className="title">{props.title}</h1>
         <p>{props.description}</p>
+        <p>{props.date}</p>
         <button className="btn" onClick={deleteHandler}>
           Delete
         </button>

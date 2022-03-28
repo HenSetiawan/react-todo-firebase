@@ -8,6 +8,7 @@ const TaskListPage = (props) => {
           <Task
             title={task.title}
             description={task.description}
+            date={task.date}
             key={task.id}
           />
         );

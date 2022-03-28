@@ -3,17 +3,20 @@ exports.getAllTaskList = () => {
     {
       id: 1,
       title: "Belajar React",
-      description: "Belajar React from youtube",
+      description: "Belajar React dari youtube",
+      date: "2001-10-23",
     },
     {
       id: 2,
       title: "Belajar Next",
-      description: "Belajar Next from youtube",
+      description: "Belajar Next dari youtube",
+      date: "2001-10-23",
     },
     {
       id: 3,
       title: "Belajar Node",
-      description: "Belajar Node from youtube",
+      description: "Belajar Node dari youtube",
+      date: "2001-10-23",
     },
   ];
 
@@ -25,12 +28,14 @@ exports.getUnfinishedTask = () => {
     {
       id: 2,
       title: "Belajar Next",
-      description: "Belajar Next from youtube",
+      description: "Belajar Next dari youtube",
+      date: "2001-10-23",
     },
     {
       id: 3,
       title: "Belajar Node",
-      description: "Belajar Node from youtube",
+      description: "Belajar Node dari youtube",
+      date: "2001-10-23",
     },
   ];
   return data;
@@ -41,7 +46,14 @@ exports.getFinishedTask = () => {
     {
       id: 1,
       title: "Belajar React",
-      description: "Belajar React from youtube",
+      description: "Belajar React dari youtube",
+      date: "2001-10-23",
+    },
+    {
+      id: 1,
+      title: "Belajar Webpack",
+      description: "Belajar Webpack dari dicoding",
+      date: "2001-10-23",
     },
   ];
 

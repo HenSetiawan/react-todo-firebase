@@ -10,6 +10,7 @@ const TaskListPage = (props) => {
             title={task.title}
             description={task.description}
             key={task.id}
+            date={task.date}
           />
         );
       })}
