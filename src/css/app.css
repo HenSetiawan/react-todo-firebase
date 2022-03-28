@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.modal-fab {
+  position: fixed;
+  right: 30px;
+  cursor: pointer;
+  bottom: 30px;
+  font-size: 35px;
+  text-align: center;
+  line-height: 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #f0ad4e;
+}

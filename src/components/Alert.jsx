@@ -1,5 +1,5 @@
 import "../css/modal.css";
-const Modal = (props) => {
+const Alert = (props) => {
   return (
     <div>
       <div className="modal">
@@ -15,4 +15,4 @@ const Modal = (props) => {
   );
 };
 
-export default Modal;
+export default Alert;
