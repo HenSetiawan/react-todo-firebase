@@ -4,12 +4,12 @@ import taskListService from "../services/TaskListService";
 const AllTaskListPage = (props) => {
   return (
     <div>
-      {taskListService.getAllTaskList().map((task) => {
+      {taskListService.getAllTaskList().map((task, index) => {
         return (
           <Task
             title={task.title}
             description={task.description}
-            key={task.id}
+            key={index}
             date={task.date}
           />
         );

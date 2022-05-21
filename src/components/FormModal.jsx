@@ -6,43 +6,43 @@ const formModal = (props) => {
       <form>
         <div className="modal-header">
           <p className="text-secondary">Tambahkan Buku</p>
-          <span className="text-secondary close-modal">X</span>
+          <span
+            className="text-secondary close-modal"
+            onClick={props.closeModal}
+          >
+            X
+          </span>
         </div>
         <hr />
-        <p className="text-warning">Semua input harus terisi !!!</p>
-        <p className="text-secondary">Judul Buku</p>
+        <p className="text-secondary">Task Title</p>
         <input
           type="text"
           className="input-text"
-          placeholder="Judul Buku"
-          id="book-title"
+          placeholder="taks title"
+          id="task-title"
           required
-          autocomplete="off"
+          autoComplete="off"
         />
-        <p className="text-secondary">Penulis Buku</p>
+        <p className="text-secondary">Description</p>
         <input
           type="text"
           className="input-text"
-          placeholder="Penulis Buku"
-          id="book-author"
+          placeholder="Description"
+          id="description"
           required
-          autocomplete="off"
+          autoComplete="off"
         />
-        <p className="text-secondary">Tahun Terbit</p>
+        <p className="text-secondary">Date</p>
         <input
-          type="number"
+          type="date"
           className="input-text"
-          placeholder="Tahun Terbit"
+          placeholder="Date"
           id="book-year"
           required
-          autocomplete="off"
+          autoComplete="off"
         />
-        <div>
-          <span className="text-secondary">Sudah Dibaca</span>
-          <input type="checkbox" name="isCompleted" id="isCompleted" />
-        </div>
         <button type="submit" className="btn btn-done" id="btn-save">
-          Tambahkan Buku
+          Add New Task
         </button>
       </form>
     </section>

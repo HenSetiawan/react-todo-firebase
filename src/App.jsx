@@ -1,4 +1,5 @@
 import "./css/app.css";
+import { useState } from "react";
 import Navigation from "./components/Navigation";
 import { Route, Routes } from "react-router-dom";
 import AllTaskListPage from "./pages/AllTaskListPage";
@@ -8,14 +9,20 @@ import FabModal from "./components/FabModal";
 import FormModal from "./components/FormModal";
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const showFormModal = () => {
-    console.log("show form modal");
+    setModalOpen(true);
+  };
+
+  const closeFormModal = () => {
+    setModalOpen(false);
   };
 
   return (
     <div className="App">
       <Navigation />
-      <FormModal />
+      {isModalOpen ? <FormModal closeModal={closeFormModal} /> : null}
       <Routes>
         <Route path="/" element={<AllTaskListPage />} />
         <Route path="/finished" element={<FinishedTask />} />
