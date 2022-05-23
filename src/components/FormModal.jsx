@@ -1,17 +1,35 @@
 import '../css/formModal.css';
 import { useRef } from 'react';
+import { db } from '../config/firebase-config';
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from 'firebase/firestore';
 
 const FormModal = (props) => {
   const titleTaskRef = useRef();
   const descriptionTaskRef = useRef();
   const dateTaskRef = useRef();
-  const formSubmitHandler = (event) => {
+  const tasksCollectionRef = collection(db, "tasks");
+
+
+  const formSubmitHandler = async (event) => {
     event.preventDefault();
     const titleTask = titleTaskRef.current.value;
     const descriptionTask = descriptionTaskRef.current.value;
     const dateTask = dateTaskRef.current.value;
 
-    console.log({titleTask, descriptionTask, dateTask})
+    const task = {
+      title: titleTask,
+      description: descriptionTask,
+      date: dateTask,
+    };
+
+    await addDoc(tasksCollectionRef,task);
   };
   return (
     <section className="book-form">
