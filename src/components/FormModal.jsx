@@ -1,21 +1,11 @@
 import '../css/formModal.css';
 import { useRef } from 'react';
-import { db } from '../config/firebase-config';
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-} from 'firebase/firestore';
+import { addNewTaskList } from '../services/task-list-firebase';
 
 const FormModal = (props) => {
   const titleTaskRef = useRef();
   const descriptionTaskRef = useRef();
   const dateTaskRef = useRef();
-  const tasksCollectionRef = collection(db, "tasks");
-
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
@@ -29,10 +19,10 @@ const FormModal = (props) => {
       date: dateTask,
     };
 
-    await addDoc(tasksCollectionRef,task);
+    await addNewTaskList(task);
   };
   return (
-    <section className="book-form">
+    <section className="task-form">
       <form onSubmit={formSubmitHandler}>
         <div className="modal-header">
           <p className="text-secondary">Add New Task</p>
@@ -55,15 +45,14 @@ const FormModal = (props) => {
           ref={titleTaskRef}
         />
         <p className="text-secondary">Description</p>
-        <input
-          type="text"
+        <textarea
           className="input-text"
           placeholder="Description"
-          id="description"
-          required
-          autoComplete="off"
+          name="description"
+          rows="4"
+          cols="50"
           ref={descriptionTaskRef}
-        />
+        ></textarea>
         <p className="text-secondary">Date</p>
         <input
           type="date"

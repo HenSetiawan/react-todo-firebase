@@ -18,7 +18,7 @@
 
 .btn-confirm {
   cursor: pointer;
-  color:white;
+  color: white;
   border-radius: 6px;
   padding: 8px;
   background-color: red;
@@ -29,4 +29,10 @@
   cursor: pointer;
   border-radius: 6px;
   padding: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+  .card-modal {
+    width: 50%;
+  }
 }
