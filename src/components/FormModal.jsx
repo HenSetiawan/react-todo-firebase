@@ -1,11 +1,23 @@
-import "../css/formModal.css";
+import '../css/formModal.css';
+import { useRef } from 'react';
 
-const formModal = (props) => {
+const FormModal = (props) => {
+  const titleTaskRef = useRef();
+  const descriptionTaskRef = useRef();
+  const dateTaskRef = useRef();
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+    const titleTask = titleTaskRef.current.value;
+    const descriptionTask = descriptionTaskRef.current.value;
+    const dateTask = dateTaskRef.current.value;
+
+    console.log({titleTask, descriptionTask, dateTask})
+  };
   return (
     <section className="book-form">
-      <form>
+      <form onSubmit={formSubmitHandler}>
         <div className="modal-header">
-          <p className="text-secondary">Tambahkan Buku</p>
+          <p className="text-secondary">Add New Task</p>
           <span
             className="text-secondary close-modal"
             onClick={props.closeModal}
@@ -22,6 +34,7 @@ const formModal = (props) => {
           id="task-title"
           required
           autoComplete="off"
+          ref={titleTaskRef}
         />
         <p className="text-secondary">Description</p>
         <input
@@ -31,6 +44,7 @@ const formModal = (props) => {
           id="description"
           required
           autoComplete="off"
+          ref={descriptionTaskRef}
         />
         <p className="text-secondary">Date</p>
         <input
@@ -40,6 +54,7 @@ const formModal = (props) => {
           id="book-year"
           required
           autoComplete="off"
+          ref={dateTaskRef}
         />
         <button type="submit" className="btn btn-done" id="btn-save">
           Add New Task
@@ -49,4 +64,4 @@ const formModal = (props) => {
   );
 };
 
-export default formModal;
+export default FormModal;

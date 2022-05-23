@@ -16,8 +16,9 @@
 }
 
 .close-modal {
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .book-form {
@@ -31,7 +32,7 @@
 .book-form form {
   margin: 50px auto;
   background-color: #fff;
-  width: 50%;
+  width: 90%;
   border-radius: 8px;
   padding: 10px;
 }

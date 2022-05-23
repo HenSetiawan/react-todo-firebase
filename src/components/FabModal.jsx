@@ -1,5 +1,5 @@
 const FabModal = (props) => {
-  return <div className="modal-fab" onClick={props.showFormModal}>+</div>;
+  return <button className="modal-fab" onClick={props.showFormModal}>+</button>;
 };
 
 export default FabModal;
