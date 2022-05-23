@@ -27,4 +27,14 @@ const getAllTask = async () => {
   }
 };
 
-export { addNewTaskList, getAllTask };
+const deleteTask = async (id) => {
+  try {
+    const taskDoc = doc(db, 'tasks', id);
+    await deleteDoc(taskDoc);
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export { addNewTaskList, getAllTask, deleteTask };

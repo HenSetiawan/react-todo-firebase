@@ -1,9 +1,8 @@
 import Task from '../components/Task';
 import { useEffect, useState } from 'react';
-import taskListService from '../services/TaskListService';
 import { getAllTask } from '../services/task-list-firebase';
 
-const AllTaskListPage = (props) => {
+const AllTaskListPage = () => {
   const [taskList, setTaskList] = useState([]);
   useEffect(() => {
     const getAllTaskList = async () => {
@@ -22,6 +21,7 @@ const AllTaskListPage = (props) => {
             description={task.description}
             key={index}
             date={task.date}
+            id={task.id}
           />
         );
       })}

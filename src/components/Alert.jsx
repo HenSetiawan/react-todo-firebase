@@ -1,4 +1,4 @@
-import "../css/modal.css";
+import '../css/modal.css';
 const Alert = (props) => {
   return (
     <div>
@@ -8,7 +8,9 @@ const Alert = (props) => {
           <button className="btn-cancel" onClick={props.onCancel}>
             Cancel
           </button>
-          <button className="btn-confirm">Confirm</button>
+          <button className="btn-confirm" onClick={props.onDelete}>
+            Confirm
+          </button>
         </div>
       </div>
     </div>
