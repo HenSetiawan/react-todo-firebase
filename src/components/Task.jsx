@@ -13,6 +13,7 @@ const Task = (props) => {
   const deleteHandler = async () => {
     try {
       deleteTask(props.id);
+      setModalOpen(true);
     } catch (error) {
       console.error(error);
     }

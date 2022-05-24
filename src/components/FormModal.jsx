@@ -17,9 +17,11 @@ const FormModal = (props) => {
       title: titleTask,
       description: descriptionTask,
       date: dateTask,
+      status:'unfinished'
     };
 
     await addNewTaskList(task);
+    props.closeModal();
   };
   return (
     <section className="task-form">
@@ -38,7 +40,7 @@ const FormModal = (props) => {
         <input
           type="text"
           className="input-text"
-          placeholder="taks title"
+          placeholder="Taks Title"
           id="task-title"
           required
           autoComplete="off"
