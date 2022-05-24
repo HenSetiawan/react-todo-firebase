@@ -1,10 +1,21 @@
-import Task from "../components/Task";
-import taskListService from "../services/TaskListService";
+import Task from '../components/Task';
+import { useState, useEffect } from 'react';
+import { getUnfinishedTask } from '../services/task-list-firebase';
 
-const TaskListPage = (props) => {
+const TaskListPage = () => {
+  const [unfinishedTask, setUnfinishedTask] = useState([]);
+  useEffect(() => {
+    const getUnfinishedTaskList = async () => {
+      const unfinishedTaskData = await getUnfinishedTask();
+      setUnfinishedTask(unfinishedTaskData);
+    };
+
+    getUnfinishedTaskList();
+  }, [unfinishedTask]);
+
   return (
     <div>
-      {taskListService.getUnfinishedTask().map((task,index) => {
+      {unfinishedTask.map((task, index) => {
         return (
           <Task
             title={task.title}

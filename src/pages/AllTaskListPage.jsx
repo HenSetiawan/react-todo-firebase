@@ -7,7 +7,7 @@ const AllTaskListPage = () => {
   useEffect(() => {
     const getAllTaskList = async () => {
       const data = await getAllTask();
-      setTaskList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setTaskList(data);
     };
 
     getAllTaskList();
