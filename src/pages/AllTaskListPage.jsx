@@ -1,17 +1,17 @@
 import Task from '../components/Task';
 import { useEffect, useState } from 'react';
-import { getAllTask } from '../services/task-list-firebase';
+import { getTasks } from '../services/task-list-firebase';
 
 const AllTaskListPage = () => {
   const [taskList, setTaskList] = useState([]);
   useEffect(() => {
     const getAllTaskList = async () => {
-      const data = await getAllTask();
+      const data = await getTasks();
       setTaskList(data);
     };
 
     getAllTaskList();
-  }, [taskList]);
+  }, []);
   return (
     <div>
       {taskList.map((task, index) => {

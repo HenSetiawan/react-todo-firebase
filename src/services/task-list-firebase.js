@@ -17,31 +17,20 @@ const addNewTaskList = async (task) => {
   }
 };
 
-const getAllTask = async () => {
+const getTasks = async (status = 'all') => {
   try {
     const taskListCollection = await getDocs(tasksCollectionRef);
-    const tasks = taskListCollection.docs.map((doc) => ({
+    const tasksData = taskListCollection.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
     }));
-    console.log(tasks);
-    return tasks;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-};
-
-const getUnfinishedTask = async () => {
-  try {
-    const taskListCollection = await getDocs(tasksCollectionRef);
-    const tasks = taskListCollection.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    const unfinishedTask = tasks.filter((task) => task.status === 'unfinished');
-    console.log(unfinishedTask);
-    return unfinishedTask;
+    if (status === 'all') {
+      return tasksData;
+    } else if (status === 'unfinished') {
+      return tasksData.filter((task) => task.status === 'unfinished');
+    } else if (status === 'finished') {
+      return tasksData.filter((task) => task.status === 'finished');
+    }
   } catch (error) {
     console.log(error);
     return null;
@@ -58,4 +47,4 @@ const deleteTask = async (id) => {
   }
 };
 
-export { addNewTaskList, getAllTask, deleteTask, getUnfinishedTask };
+export { addNewTaskList, getTasks, deleteTask };

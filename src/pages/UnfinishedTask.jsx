@@ -1,17 +1,17 @@
 import Task from '../components/Task';
 import { useState, useEffect } from 'react';
-import { getUnfinishedTask } from '../services/task-list-firebase';
+import { getTasks } from '../services/task-list-firebase';
 
 const TaskListPage = () => {
   const [unfinishedTask, setUnfinishedTask] = useState([]);
   useEffect(() => {
     const getUnfinishedTaskList = async () => {
-      const unfinishedTaskData = await getUnfinishedTask();
+      const unfinishedTaskData = await getTasks('unfinished');
       setUnfinishedTask(unfinishedTaskData);
     };
 
     getUnfinishedTaskList();
-  }, [unfinishedTask]);
+  }, []);
 
   return (
     <div>
